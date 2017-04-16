@@ -74,6 +74,8 @@ class Plugin extends PluginBase
                 $report .= '</td>';
             $report .= '</tr>';
             $i++;
+            $visit->reported = 1;
+            $visit->save();
         }
         $report .= '</table>';
         return $report;
