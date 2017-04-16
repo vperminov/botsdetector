@@ -1,0 +1,8 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table alexis_botdetector_visits'
+    - builder_table_create_alexis_botdetector_visits.php
+1.0.3:
+    - 'Updated table alexis_botdetector_visits'
+    - builder_table_update_alexis_botdetector_visits.php

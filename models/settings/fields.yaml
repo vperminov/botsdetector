@@ -1,0 +1,160 @@
+tabs:
+    fields:
+        email:
+            label: 'alexis.botdetector::lang.settings.email'
+            oc.commentPosition: ''
+            span: left
+            required: 1
+            type: text
+            tab: 'alexis.botdetector::lang.tabs.main'
+        emailRecepient:
+            label: 'alexis.botdetector::lang.settings.mail_name'
+            oc.commentPosition: ''
+            span: left
+            required: 1
+            type: text
+            tab: 'alexis.botdetector::lang.tabs.main'
+        periodicity:
+            label: 'alexis.botdetector::lang.settings.periodicity'
+            oc.commentPosition: ''
+            span: left
+            type: dropdown
+            options:
+                1: '1'
+                2: '2'
+                3: '3'
+                4: '4'
+                6: '6'
+                8: '8'
+                12: '12'
+            tab: 'alexis.botdetector::lang.tabs.main'
+        logging:
+            label: 'alexis.botdetector::lang.settings.logging'
+            type: checkbox
+            default: false
+            tab: 'alexis.botdetector::lang.tabs.main'
+        mailing:
+            label: 'alexis.botdetector::lang.settings.mailing'
+            type: checkbox
+            default: false
+            tab: 'alexis.botdetector::lang.tabs.main'
+        allowOnlySome:
+            label: 'alexis.botdetector::lang.settings.allowOnlySome'
+            type: checkbox
+            default: false
+            tab: 'alexis.botdetector::lang.tabs.looking'
+        section1:
+            label: 'Google'
+            type: section
+            trigger:
+                  action: show
+                  field: allowOnlySome
+                  condition: unchecked
+            tab: 'alexis.botdetector::lang.tabs.looking'
+        bot[Feedfetcher]:
+            label: 'Feedfetcher-Google'
+            type: checkbox
+            trigger:
+                  action: show
+                  field: allowOnlySome
+                  condition: unchecked
+            comment: 'alexis.botdetector::lang.settings.Feedfetcher_comm'
+            tab: 'alexis.botdetector::lang.tabs.looking'
+        bot[Googlebot]:
+            label: 'alexis.botdetector::lang.settings.Googlebot'
+            type: checkbox
+            trigger:
+                  action: show
+                  field: allowOnlySome
+                  condition: unchecked
+            comment: 'alexis.botdetector::lang.settings.Googlebot_comm'
+            tab: 'alexis.botdetector::lang.tabs.looking'
+
+        bot[Googlebot-News]:
+            label: 'alexis.botdetector::lang.settings.GooglebotNews'
+            type: checkbox
+            trigger:
+                  action: show
+                  field: allowOnlySome
+                  condition: unchecked
+            tab: 'alexis.botdetector::lang.tabs.looking'
+        bot[Googlebot-Image]:
+            label: 'alexis.botdetector::lang.settings.GooglebotImage'
+            type: checkbox
+            trigger:
+                  action: show
+                  field: allowOnlySome
+                  condition: unchecked
+            tab: 'alexis.botdetector::lang.tabs.looking'
+        bot[Googlebot-Video]:
+            label: 'alexis.botdetector::lang.settings.GooglebotVideo'
+            type: checkbox
+            trigger:
+                  action: show
+                  field: allowOnlySome
+                  condition: unchecked
+            tab: 'alexis.botdetector::lang.tabs.looking'
+        bot[Mediapartners-Google]:
+            label: 'AdSense'
+            type: checkbox
+            trigger:
+                  action: show
+                  field: allowOnlySome
+                  condition: unchecked
+            tab: 'alexis.botdetector::lang.tabs.looking'
+        bot[AdsBot-Google]:
+            label: 'alexis.botdetector::lang.settings.AdsBotGoogle'
+            type: checkbox
+            trigger:
+                  action: show
+                  field: allowOnlySome
+                  condition: unchecked
+            tab: 'alexis.botdetector::lang.tabs.looking'
+        bot[AdsBot-Google-Mobile-Apps]:
+            label: 'alexis.botdetector::lang.settings.GoogleMobile'
+            type: checkbox
+            trigger:
+                  action: show
+                  field: allowOnlySome
+                  condition: unchecked
+            tab: 'alexis.botdetector::lang.tabs.looking'
+        section2:
+            label: 'Yandex'
+            type: section
+            trigger:
+                  action: show
+                  field: allowOnlySome
+                  condition: unchecked
+            tab: 'alexis.botdetector::lang.tabs.looking'
+        bot[YandexBot]:
+            label: 'alexis.botdetector::lang.settings.YandexBot'
+            type: checkbox
+            trigger:
+                  action: show
+                  field: allowOnlySome
+                  condition: unchecked
+            tab: 'alexis.botdetector::lang.tabs.looking'
+        bot[YandexAccessibilityBot]:
+            label: 'alexis.botdetector::lang.settings.YandexAccessibilityBot'
+            type: checkbox
+            trigger:
+                  action: show
+                  field: allowOnlySome
+                  condition: unchecked
+            tab: 'alexis.botdetector::lang.tabs.looking'
+        bot[YandexMobileBot]:
+            label: 'alexis.botdetector::lang.settings.YandexMobileBot'
+            type: checkbox
+            trigger:
+                  action: show
+                  field: allowOnlySome
+                  condition: unchecked
+            tab: 'alexis.botdetector::lang.tabs.looking'
+        bot[YandexDirectDyn]:
+            label: 'alexis.botdetector::lang.settings.YandexDirectDyn'
+            type: checkbox
+            trigger:
+                  action: show
+                  field: allowOnlySome
+                  condition: unchecked
+            tab: 'alexis.botdetector::lang.tabs.looking'

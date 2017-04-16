@@ -1,0 +1,6 @@
+plugin:
+    name: 'alexis.botdetector::lang.plugin.name'
+    description: 'alexis.botdetector::lang.plugin.description'
+    author: Alexis
+    icon: oc-icon-bell-o
+    homepage: 'https://rusit.rs'
