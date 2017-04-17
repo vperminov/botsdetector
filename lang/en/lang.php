@@ -12,7 +12,7 @@
     'texts' => [
         'description' => 'description: ',
         'on_page' => 'On page ',
-        'came' => 'bot came',
+        'came' => ' bot came ',
         'number' => 'Number',
         'sercher' => 'Search engine',
         'table_descr' => 'Description',

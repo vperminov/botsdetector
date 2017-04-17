@@ -9,6 +9,8 @@ use Lang;
 
 class Plugin extends PluginBase
 {
+    private $locale;
+
     public function registerComponents()
     {
         return [
@@ -39,6 +41,7 @@ class Plugin extends PluginBase
             $cronString = '* 0-23/' . $periodicity . ' * * *';
         }
         $schedule->call(function () {
+            $this->setLocale();
             if ($report = $this->generateReport()) {
                 Mail::send('alexis.botdetector::mail.report', ['report' => $report, 'subject' =>  Config::get('app.url') . ' - bot report'], function($message) {
                     $message->from(Config::get('mail.from.address'), Config::get('mail.from.name'));
@@ -89,5 +92,9 @@ class Plugin extends PluginBase
         }
         $report .= '</table>';
         return $report;
+    }
+
+    private function setLocale() {
+        Lang::setLocale(Config::get('app.locale'));
     }
 }

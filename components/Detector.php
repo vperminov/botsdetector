@@ -30,6 +30,7 @@ class Detector extends ComponentBase
 
     public function onRun() {
         $this->settings = Settings::instance();
+        $this->setLocale();
         if (preg_match($this->generateBotsMatchPattern(), $_SERVER['HTTP_USER_AGENT'], $out)) {
             $mess = $this->generateMessage($_SERVER['REQUEST_URI'], $out[0], $_SERVER['HTTP_USER_AGENT']);
             if ($this->getSetting('logging')) {
@@ -86,6 +87,10 @@ class Detector extends ComponentBase
             . $bot . ', '
             . Lang::get('alexis.botdetector::lang.texts.description')
             . $description;
+    }
+
+    private function setLocale() {
+        Lang::setLocale(Config::get('app.locale'));
     }
 
 }
