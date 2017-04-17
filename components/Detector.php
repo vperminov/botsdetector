@@ -45,6 +45,7 @@ class Detector extends ComponentBase
                 $model = new Visits;
                 $model->bot_owner = $out[0];
                 $model->bot_description = $_SERVER['HTTP_USER_AGENT'];
+                $model->page_url = $_SERVER['REQUEST_URI'];
                 $model->save();
             }
         }

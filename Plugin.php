@@ -50,6 +50,8 @@ class Plugin extends PluginBase
         $report = '<table><tr><td>'
             . Lang::get('alexis.botdetector::lang.texts.number')
             . '</td><td>'
+            . Lang::get('alexis.botdetector::lang.texts.page_url')
+            . '</td><td>'
             . Lang::get('alexis.botdetector::lang.texts.sercher')
             . '</td><td>'
             . Lang::get('alexis.botdetector::lang.texts.table_descr')
@@ -62,6 +64,9 @@ class Plugin extends PluginBase
             $report .= '<tr>';
                 $report .= '<td>';
                     $report .= $i;
+                $report .= '</td>';
+                $report .= '<td>';
+                    $report .= $visit->page_url;
                 $report .= '</td>';
                 $report .= '<td>';
                     $report .= $visit->bot_owner;

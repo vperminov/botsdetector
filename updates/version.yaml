@@ -6,3 +6,6 @@
 1.0.3:
     - 'Updated table alexis_botdetector_visits'
     - builder_table_update_alexis_botdetector_visits.php
+1.0.4:
+    - 'Add page URL to reports'
+    - builder_table_update_alexis_botdetector_visits_2.php

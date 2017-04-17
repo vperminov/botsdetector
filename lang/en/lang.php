@@ -17,6 +17,7 @@
         'sercher' => 'Search engine',
         'table_descr' => 'Description',
         'income_time' => 'Date and time',
+        'page_url' => 'Page URL',
     ],
     'settings' => [
         'email' => 'Email for reports',
