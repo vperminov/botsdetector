@@ -9,3 +9,5 @@
 1.0.4:
     - 'Add page URL to reports'
     - builder_table_update_alexis_botdetector_visits_2.php
+1.0.5:
+    - 'Dont send report if empty'

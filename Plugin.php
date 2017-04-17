@@ -39,10 +39,12 @@ class Plugin extends PluginBase
             $cronString = '* 0-23/' . $periodicity . ' * * *';
         }
         $schedule->call(function () {
-            Mail::send('alexis.botdetector::mail.report', ['report' => $this->generateReport(), 'subject' =>  Config::get('app.url') . ' - bot report'], function($message) {
-                $message->from(Config::get('mail.from.address'), Config::get('mail.from.name'));
-                $message->to(Settings::get('email'), Settings::get('emailRecepient'));
-            });
+            if ($report = $this->generateReport()) {
+                Mail::send('alexis.botdetector::mail.report', ['report' => $report, 'subject' =>  Config::get('app.url') . ' - bot report'], function($message) {
+                    $message->from(Config::get('mail.from.address'), Config::get('mail.from.name'));
+                    $message->to(Settings::get('email'), Settings::get('emailRecepient'));
+                });
+            }
         })->cron($cronString);
     }
 
@@ -60,6 +62,9 @@ class Plugin extends PluginBase
             . '</td></tr>';
         $i = 1;
         $visits = Visits::where('reported', '=', 0)->orderBy('created_at')->get();
+        if(count($visits) == 0) {
+            return FALSE;
+        }
         foreach ($visits as $visit) {
             $report .= '<tr>';
                 $report .= '<td>';
