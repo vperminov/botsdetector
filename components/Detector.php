@@ -11,6 +11,10 @@ use Lang;
 class Detector extends ComponentBase
 {
     /**
+     * @var boolean
+     */
+    public $isBot = false;
+    /**
      * @var object
      */
     private $settings;
@@ -32,6 +36,7 @@ class Detector extends ComponentBase
         $this->settings = Settings::instance();
         $this->setLocale();
         if (preg_match($this->generateBotsMatchPattern(), $_SERVER['HTTP_USER_AGENT'], $out)) {
+            $this->isBot = true;
             $mess = $this->generateMessage($_SERVER['REQUEST_URI'], $out[0], $_SERVER['HTTP_USER_AGENT']);
             if ($this->getSetting('logging')) {
                 Log::info($mess);
